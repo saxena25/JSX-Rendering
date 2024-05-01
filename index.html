@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX Rendering</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        let root = document.querySelector('#root');
+
+        //firstly i have a boolean value to true;
+        let value = true;
+        //now here i have taken two variables with different text;
+        let valueTrue = <p>TRUE! Seize the day</p>;
+        let valueFalse = <p>FALSE!</p>;
+        //here i am using ternary operator if the value is true it will 
+        //show valueTrue variable and is the value is false it will show
+        //valueFalse variable;
+        let condition = value ? valueTrue : valueFalse;
+        
+        //here iam taken a variable with the name text;
+        let text = 'Seize the day';
+        let element = (
+            <>
+                
+                <p>{text}</p>
+                {condition}
+                </>
+                //here iam rendering condition variable so that both the 
+                //variables can display on UI.
+            );
+
+        let reactRoot = ReactDOM.createRoot(root);
+        //here i am rendering element in reactRoot;
+        reactRoot.render(element);
+    </script>
+</body>
+</html>
